@@ -13,6 +13,15 @@ app = FastAPI(
 app.include_router(api_v1_router, prefix="/api/v1")
 app.include_router(api_v2_router, prefix="/api/v2")
 
+"""
+! The root endpoint returns a simple message with a welcome message to the
+* application. This endpoint is not included in the API documentation.
+"""
+
+
+
+
 @app.get("/")
 def root():
     return {"message": "Welcome to FAPIN!"}
+

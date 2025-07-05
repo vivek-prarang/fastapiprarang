@@ -19,7 +19,12 @@ class Settings(BaseSettings):
     @property
     def db_url(self):
         return (
-            f"mysql+aiomysql://{self.db_user}:{self.db_password}"
+            f"mysql+pymysql://{self.db_user}:{self.db_password}"
             f"@{self.db_host}:{self.db_port}/{self.db_name}"
         )
 settings = Settings()
+
+
+"""
+*Return the full URL for connecting to the DB, in the format mysql+aiomysql://user:password@host:port/db_name.
+"""
